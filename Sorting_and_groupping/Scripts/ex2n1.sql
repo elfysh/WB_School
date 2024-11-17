@@ -1,6 +1,6 @@
 with more_one_category as(
 select seller_id, count(distinct category) as total_categ, round(avg(rating),2) as avg_rating,
-sum(revenue) as total_revenue from sellers--среди дублирующихся категорий выручка тоже считается(обосновать!)
+sum(revenue) as total_revenue from sellers
 where category!='Bedding'
 group by seller_id
 having count(distinct category)>1
